@@ -33,7 +33,7 @@ const Contact = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+    console.log("data", formData);
     setFormStatus("submitting");
 
     // Re-sanitize data before submitting
