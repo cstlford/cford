@@ -27,7 +27,9 @@ const Projects = () => {
           {projects.map((project) => (
             <div key={project.id} className={styles.projectCard}>
               <div className={styles.projectImage}>
-                <img src={project.image} alt={project.title} />
+                <a href="https://shapeshiftness.netlify.app/" target="_blank">
+                  <img src={project.image} alt={project.title} />
+                </a>
               </div>
               <div className={styles.projectContent}>
                 <h2>{project.title}</h2>

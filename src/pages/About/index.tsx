@@ -54,9 +54,10 @@ const About = () => {
               connect! Let’s build something amazing together.
             </p>
             <p>
-              Feel free to reach <Link to="/contact">out</Link> or check out my
-              projects and experience for more about what I can bring to your
-              team.
+              Feel free to <Link to="/contact">reach out</Link> or check out my{" "}
+              <Link to="/projects">projects</Link> and{" "}
+              <Link to="/experience">experience</Link> for more about what I can
+              bring to your team.
             </p>
           </div>
 

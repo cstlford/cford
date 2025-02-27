@@ -13,11 +13,7 @@ const Home = () => {
               <br />I build{" "}
               <span className={styles.highlightBlue}>digital experiences</span>.
             </h1>
-            <p>
-              I'm a Computer Science graduate specializing in web development
-              and software engineering. I create elegant solutions to complex
-              problems with a focus on user experience and clean code.
-            </p>
+
             <div className={styles.ctaButtons}>
               <Link to="/projects" className="btn">
                 View My Work

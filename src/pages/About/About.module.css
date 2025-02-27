@@ -37,9 +37,14 @@
   color: var(--text-secondary);
 }
 
+.about a:first-of-type {
+  color: var(--text-primary);
+}
+
 .aboutText a {
   color: var(--text-secondary);
-  font-weight: 600;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .skillsSection h2 {
