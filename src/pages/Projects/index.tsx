@@ -1,9 +1,6 @@
 import styles from "./Projects.module.css";
 import shapeshift from "../../assets/shapeshift-gen.png";
 
-import twitterBitcoin from "../../assets/btc.png";
-import studyTool from "../../assets/shapeshift-gen.png";
-
 const Projects = () => {
   const projects = [
     {
