@@ -55,7 +55,6 @@ const About = () => {
             </p>
             <p>
               Feel free to <Link to="/contact">reach out</Link> or check out my{" "}
-              <Link to="/projects">projects</Link> and{" "}
               <Link to="/experience">experience</Link> for more about what I can
               bring to your team.
             </p>

@@ -15,7 +15,7 @@ const Home = () => {
             </h1>
 
             <div className={styles.ctaButtons}>
-              <Link to="/projects" className="btn">
+              <Link to="/experience" className="btn">
                 View My Work
               </Link>
               <Link to="/contact" className="btn btn-secondary">

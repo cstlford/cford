@@ -123,15 +123,6 @@ const Contact = () => {
                 >
                   GitHub
                 </a>
-
-                <a
-                  href="https://x.com/cstlford"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.socialIcon}
-                >
-                  X
-                </a>
               </div>
             </div>
           </div>

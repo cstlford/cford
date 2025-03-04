@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navs = ["About", "Projects", "Experience", "Contact"];
+  const navs = ["About", "Experience", "Contact"];
 
   return (
     <header className={styles.header}>

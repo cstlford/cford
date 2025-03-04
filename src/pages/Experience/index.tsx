@@ -1,5 +1,7 @@
 import styles from "./Experience.module.css";
-import cvFile from "../../assets/cford_cv.pdf";
+import shapeshift from "../../assets/shapeshift-gen.png";
+import btc from "../../assets/btc.png";
+import eco from "../../assets/eco-driving visual.jpg";
 
 const Experience = () => {
   const experience = [
@@ -40,44 +42,47 @@ const Experience = () => {
     {
       title: "ShapeShift: Generative AI for Nutrition & Exercise",
       technologies: ["React", "Redux", "Django", "MySQL"],
-      description: [
-        "Built a full-stack web app with React/Redux frontend and Django/MySQL backend, integrating generative AI for personalized meal and workout plans.",
-        "Engineered a responsive dashboard with daily plans and goal-tracking, deployed on Heroku and Netlify, handling authentication, data management, and AI recommendations.",
-      ],
+      description:
+        "Built a full-stack web app with React/Redux frontend and Django/MySQL backend, integrating generative AI for personalized meal and workout plans. Engineered a responsive dashboard with daily plans and goal-tracking, deployed on Heroku and Netlify, handling authentication, data management, and AI recommendations.",
+      liveLink: "https://shapeshiftness.netlify.app",
+      image: shapeshift,
     },
 
     {
       title: "Eco-Driving Algorithm Research",
       technologies: ["Python", "PTV Vissim API"],
-      description: [
-        "Developed Python scripts based on my advisor’s research paper, integrating traffic optimization algorithms into PTV Vissim via its API, reducing congested route times by 45%.",
-        "Tested and refined solutions, ensuring scalability and performance for real-world traffic simulation scenarios under tight deadlines.",
-      ],
+      description:
+        "Developed Python scripts based on my advisor's research paper, integrating traffic optimization algorithms into PTV Vissim via its API, reducing congested route times by up to 45%. Tested and refined solutions, ensuring scalability and performance for real-world traffic simulation scenarios under tight deadlines.",
+
+      image: eco,
     },
-    {
-      title: "Learn Loop: AI Study Tool",
-      technologies: ["React", "Flask"],
-      description: [
-        "Designed and built a React/Flask web app to enhance learning via AI-driven study techniques.",
-      ],
-    },
+
     {
       title: "Twitter Sentiment vs. Bitcoin Price Analysis",
       technologies: ["Python", " Pandas", "Matplotlib", "NLP"],
       description: [
-        "Analyzed Twitter sentiment’s correlation with Bitcoin price volatility using Python (Pandas, Matplotlib, NLP), developing data pipelines and visualizations to uncover actionable market trends.",
+        "Analyzed Twitter sentiment's correlation with Bitcoin price volatility using Python (Pandas, Matplotlib, NLP), developing data pipelines and visualizations to uncover actionable market trends.",
       ],
+      image: btc,
+      liveLink:
+        "https://colab.research.google.com/drive/1UNc608n9gCKRG8CgRhVjfx0lhPbLRcAT?usp=sharing",
+    },
+    {
+      title: "Learn Loop: AI Study Tool",
+      technologies: ["React", "Flask"],
+      description:
+        "Designed and built a React/Flask web app to enhance learning via AI-driven study techniques.",
     },
   ];
   return (
-    <div className={styles.experienceContainer}>
-      {/* Education Section */}
-      <section className={styles.educationSection}>
-        <h2 className={styles.sectionTitle}>Education</h2>
+    <div className={styles.container}>
+      <h1 className={styles.title}>My Experience</h1>
+      <section className={styles.education}>
+        <h2>Education</h2>
         {education.map((edu, index) => (
           <div key={index} className={styles.educationItem}>
-            <h3 className={styles.institutionName}>{edu.institution}</h3>
-            <ul className={styles.educationDetails}>
+            <h3>{edu.institution}</h3>
+            <ul>
               {edu.details.map((detail, detailIndex) => (
                 <li key={detailIndex}>{detail}</li>
               ))}
@@ -86,48 +91,64 @@ const Experience = () => {
         ))}
       </section>
 
-      {/* Projects Section */}
-      <section className={styles.projectsSection}>
-        <h2 className={styles.sectionTitle}>Projects</h2>
-        {projects.map((project, index) => (
-          <div key={index} className={styles.projectItem}>
-            <div className={styles.projectHeader}>
-              <h3 className={styles.projectTitle}>{project.title}</h3>
-              <div className={styles.technologies}>
-                {project.technologies.map((tech, techIndex) => (
-                  <span key={techIndex} className={styles.techTag}>
-                    {tech}
-                  </span>
-                ))}
+      <section className={styles.projects}>
+        <h2>Projects</h2>
+        <div className={styles.projectList}>
+          {projects.map((project, index) => (
+            <div key={index} className={styles.projectCard}>
+              {project.image && (
+                <div className={styles.projectImage}>
+                  <a href="https://shapeshiftness.netlify.app/" target="_blank">
+                    <img src={project.image} alt={project.title} />
+                  </a>
+                </div>
+              )}
+              <div className={styles.projectContent}>
+                <h2>{project.title}</h2>
+                <p>{project.description}</p>
+                <div className={styles.techTags}>
+                  {project.technologies.map((tech, index) => (
+                    <span key={index} className={styles.tag}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className={styles.projectLinks}>
+                  {project.liveLink && (
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.projectLink}
+                    >
+                      Live Demo
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
-            <ul className={styles.projectDescription}>
-              {project.description.map((desc, descIndex) => (
-                <li key={descIndex}>{desc}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
 
-      {/* Professional Experience Section */}
-      <section className={styles.experienceSection}>
-        <h2 className={styles.sectionTitle}>Professional Experience</h2>
-        {experience.map((exp, index) => (
+      <section className={styles.experience}>
+        <h2>Professional Experience</h2>
+        {experience.map((job, index) => (
           <div key={index} className={styles.experienceItem}>
-            <div className={styles.experienceHeader}>
-              <h3 className={styles.companyName}>{exp.company}</h3>
-              <span className={styles.location}>{exp.location}</span>
+            <div className={styles.jobHeader}>
+              <h3>{job.position}</h3>
+              <span>{job.duration}</span>
             </div>
-            <div className={styles.positionDetails}>
-              <h4 className={styles.position}>{exp.position}</h4>
-              <span className={styles.duration}>{exp.duration}</span>
+            <div className={styles.jobDetails}>
+              <h4>
+                {job.company} | {job.location}
+              </h4>
+              <ul>
+                {job.description.map((desc, descIndex) => (
+                  <li key={descIndex}>{desc}</li>
+                ))}
+              </ul>
             </div>
-            <ul className={styles.experienceDescription}>
-              {exp.description.map((desc, descIndex) => (
-                <li key={descIndex}>{desc}</li>
-              ))}
-            </ul>
           </div>
         ))}
       </section>

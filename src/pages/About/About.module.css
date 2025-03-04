@@ -37,12 +37,8 @@
   color: var(--text-secondary);
 }
 
-.about a:first-of-type {
-  color: var(--text-primary);
-}
-
 .aboutText a {
-  color: var(--text-secondary);
+  color: #b8b8b8;
   font-weight: 700;
   text-decoration: none;
 }
