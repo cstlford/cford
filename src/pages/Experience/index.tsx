@@ -2,6 +2,7 @@ import styles from "./Experience.module.css";
 import shapeshift from "../../assets/shapeshift-gen.png";
 import btc from "../../assets/btc.png";
 import eco from "../../assets/eco-driving visual.jpg";
+import monster from "../../assets/monster.png";
 
 const Experience = () => {
   const experience = [
@@ -47,7 +48,14 @@ const Experience = () => {
       liveLink: "https://shapeshiftness.netlify.app",
       image: shapeshift,
     },
-
+    {
+      title: "Monster Munch: An Arithmetic Game",
+      technologies: ["React", "Redux", "React Router"],
+      description:
+        "Developed an engaging React application designed to enhance mental math skills through interactive gameplay. Users can practice arithmetic operations in a fun and challenging environment.",
+      gitLink: "https://github.com/cstlford/arithmeticGame",
+      image: monster,
+    },
     {
       title: "Eco-Driving Algorithm Research",
       technologies: ["Python", "PTV Vissim API"],
@@ -122,6 +130,16 @@ const Experience = () => {
                       className={styles.projectLink}
                     >
                       Live Demo
+                    </a>
+                  )}
+                  {project.gitLink && (
+                    <a
+                      href={project.gitLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.projectLink}
+                    >
+                      Github
                     </a>
                   )}
                 </div>
